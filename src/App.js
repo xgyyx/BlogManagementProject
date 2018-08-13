@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
+
+import {Layout} from 'antd';
+
+import store from './store';
+import NavBar from './common/navBar';
+import Header from './common/header';
+import Content from './common/content';
+import FooterPart from './common/footer';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='AppRoot'>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Layout style={{height: '100%'}}>
+              <NavBar></NavBar>
+              <Layout>
+                <Header></Header>
+                <Content></Content>
+                <FooterPart></FooterPart>
+              </Layout>
+            </Layout>
+          </BrowserRouter>
+        </Provider>
       </div>
     );
   }
