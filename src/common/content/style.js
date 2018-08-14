@@ -8,7 +8,7 @@ export const ContentWrapper = styled(Content)`
 `;
 
 export const BreadcrumbWrapper = styled(Breadcrumb)`
-  margin: 16px 0;
+  margin: 16px 0 !important;
 `;
 
 export const MainContentWrapper = styled.div`

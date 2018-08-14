@@ -1,5 +1,11 @@
 import {combineReducers} from 'redux-immutable';
 
-const reducer = combineReducers({});
+import {reducer as navBarReducer} from '../common/navBar/store';
+import {reducer as contentReducer} from '../common/content/store';
+
+const reducer = combineReducers({
+  navBar: navBarReducer,
+  content: contentReducer
+});
 
 export default reducer;
